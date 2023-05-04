@@ -26,9 +26,9 @@
 ## Programming Assignments
 | Assignment                    | Finished Project       |                                                                                                      
 | :----                         | :----                  |                                                                                                       
-| [Assignment 1]()              | [Concentration]()      |       
-| [Assignment 2]()              | [Set]()                |       
-| [Assignment 3]()              | [Graphical Set]()      |        
-| [Assignment 4]()              | [Animated Set]()       |        
-| [Assignment 5]()              | [Image Gallery]()      |       
-| [Assignment 6]()              | [Persistent Image Gallery]()  |
+| [Assignment 1]()              |       |       
+| [Assignment 2]()              |                 |       
+| [Assignment 3]()              |       |        
+| [Assignment 4]()              |        |        
+| [Assignment 5]()              |       |       
+| [Assignment 6]()              |   |
