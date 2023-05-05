@@ -4,7 +4,7 @@
 ## Lectures
 | Lecture     | Topic                                                 | Homework          | Status   |
 | :----:      | :---                                                  | :----:            | :----:   |
-| Lecture 1   | Introduction                                          | Lecture code      |        |
+| Lecture 1   | Introduction                                          | Lecture code      | Done ✅  |
 | Lecture 2   | MVC                                                   | Lecture code      |        |
 | Lecture 3   | Swift Programming Language                            | Lecture code      |        |
 | Lecture 4   | More Swift                                            | Lecture code      |        |
