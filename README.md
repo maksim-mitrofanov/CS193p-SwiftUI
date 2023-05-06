@@ -4,23 +4,22 @@
 ## Lectures
 | Lecture     | Topic                                                 | Homework          | Status   |
 | :----:      | :---                                                  | :----:            | :----:   |
-| Lecture 1   | Introduction                                          | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%201)      | Done ✅  |
-| Lecture 2   | MVC                                                   | Lecture code      |        |
-| Lecture 3   | Swift Programming Language                            | Lecture code      |        |
-| Lecture 4   | More Swift                                            | Lecture code      |        |
-| Lecture 5   | Drawing                                               | Lecture code      |        |
-| Lecture 6   | Multitouch                                            | Lecture code      |        |
-| Lecture 7   | Multiple MVC                                          | Lecture code      |        |
-| Lecture 8   | Animation                                             | Lecture code      |        |                     
-| Lecture 9   | View Controller Lifecycle and Scroll View             | Lecture code      |        |
-| Lecture 10  | Multithreading and Autolayout                         | Lecture code      |        |
-| Lecture 11  | Drag and Drop, Table View, Collection View            | Lecture code      |        |
-| Lecture 12  | TextField, Drap and Drop, Collection View             | Lecture code      |        |
-| Lecture 13  | Persistence and Documents                             | Lecture code      |        |
-| Lecture 14  | Persistence and Documents Demo                        | Lecture code      |        |
-| Lecture 15  | Alerts, Notifications, Application Lifecycle          | Lecture code      |        |
-| Lecture 16  | More Segues                                           | Lecture code      |        |
-| Lecture 17  | Core Motion and Camera                                | Lecture code      |        |
+| Lecture 1   | Getting Started with SwiftUI                          | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%201)      | Done ✅  |
+| Lecture 2   | Learning More about SwiftUI                           | Lecture code      |        |
+| Lecture 3   | MVVM                                                  | Lecture code      |        |
+| Lecture 4   | More MVVM, enum, Optionals                            | Lecture code      |        |
+| Lecture 5   | Properties, Layout, @ViewBuilder                      | Lecture code      |        |
+| Lecture 6   | Protocols, Shapes                                     | Lecture code      |        |
+| Lecture 7   | ViewModifier, Animation                               | Lecture code      |        |
+| Lecture 8   | Animation Demo                                        | Lecture code      |        |                     
+| Lecture 9   | EmojiArt, Drag/Drop                                   | Lecture code      |        |
+| Lecture 10  | Gestures                                              | Lecture code      |        |
+| Lecture 11  | Persistence, Error Handling                           | Lecture code      |        |
+| Lecture 12  | Binding, Sheet, Navigation, EditMode                  | Lecture code      |        |
+| Lecture 13  | Publisher, More Persistence                           | Lecture code      |        |
+| Lecture 14  | Document, Architecture                                | Lecture code      |        |
+| Lecture 15  | UIKit Integration                                     | Lecture code      |        |
+| Lecture 16  | Multiplatform (macOS)                                 | Lecture code      |        |
 <br>
 
 ## Programming Assignments
