@@ -7,7 +7,7 @@
 | Lecture 1   | Getting Started with SwiftUI                          | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%201)      | Done ✅  |
 | Lecture 2   | Learning More about SwiftUI                           | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%202)      | Done ✅  |
 | Lecture 3   | MVVM                                                  | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%203)      | Done ✅  |
-| Lecture 4   | More MVVM, enum, Optionals                            | Lecture code      |        |
+| Lecture 4   | More MVVM, enum, Optionals                            | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%204)      | Done ✅  |
 | Lecture 5   | Properties, Layout, @ViewBuilder                      | Lecture code      |        |
 | Lecture 6   | Protocols, Shapes                                     | Lecture code      |        |
 | Lecture 7   | ViewModifier, Animation                               | Lecture code      |        |
