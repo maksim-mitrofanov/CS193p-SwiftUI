@@ -23,11 +23,11 @@
 <br>
 
 ## Programming Assignments
-| Assignment                    | Finished Project       |                                                                                                      
-| :----                         | :----                  |                                                                                                       
-| [Assignment 1]()              |       |       
-| [Assignment 2]()              |                 |       
-| [Assignment 3]()              |       |        
-| [Assignment 4]()              |        |        
-| [Assignment 5]()              |       |       
-| [Assignment 6]()              |   |
+| Assignment                                                                                                                |  Project |  Status   |                                                                                                  
+| :----                                                                                                                     | :----    |  :----:   |                                                                                                      
+| [Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf)             |          |           |     
+| [Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Assignment%202.pdf)           |          |              |    
+| [Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3_0.pdf)           |          |                   |
+| [Assignment 4](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_4_0.pdf)           |          |                   |
+| [Assignment 5](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_5_0.pdf)           |          |                  |
+| [Assignment 6](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_6.pdf)             |          |           |
