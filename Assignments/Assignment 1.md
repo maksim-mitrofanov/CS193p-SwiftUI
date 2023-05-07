@@ -10,5 +10,7 @@ Extend the code from lectures 1 & 2
 * Each theme should have a predefined list of emojis
 
 ## Demo
+https://user-images.githubusercontent.com/87092187/236700677-eae0b0ed-0eae-40d3-aa8b-51661e8609a2.mp4
+
 
 
