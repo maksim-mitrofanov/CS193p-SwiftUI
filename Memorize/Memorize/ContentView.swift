@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵"]
-    let columns = [GridItem(.adaptive(minimum: 80))]
+    @State var emojis = animalEmojis
     @State var shownEmojiCount = 4
+    @State var fillColor: Color = .orange
+   
+    let columns = [GridItem(.adaptive(minimum: 80))]
+    
     
     var body: some View {
         VStack {
@@ -20,41 +23,72 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10){
                     ForEach(emojis[0..<shownEmojiCount], id: \.self) { emoji in
-                        CardView(title: emoji, fillColor: .orange)
+                        CardView(title: emoji, fillColor: fillColor)
                     }
                 }
                 .padding()
             }
             Spacer()
+            themeChoosingButtons
             bottomButtons
         }
     }
     
+    var themeChoosingButtons: some View {
+        HStack {
+            Button {
+                emojis = ContentView.animalEmojis.shuffled()
+                shownEmojiCount = 8
+                fillColor = .orange
+            } label: {
+                Text(ContentView.animalEmojis[0])
+            }
+            
+            Button {
+                emojis = ContentView.vehicleEmojis.shuffled()
+                shownEmojiCount = 10
+                fillColor = .black
+            } label: {
+                Text(ContentView.vehicleEmojis[0])
+            }
+            
+            Button {
+                emojis = ContentView.fruitEmojis.shuffled()
+                shownEmojiCount = 12
+                fillColor = .green
+            } label: {
+                Text(ContentView.fruitEmojis[0])
+            }
+        }
+        .buttonStyle(.bordered)
+    }
+    
     var bottomButtons: some View {
         HStack {
-            removeCardsButton
-            addCardsButton
+            //remove button
+            Button {
+                if shownEmojiCount > 2 { shownEmojiCount -= 1}
+            } label: {
+                Image(systemName: "minus.circle")
+            }
+            
+            //add button
+            Button {
+                if shownEmojiCount < emojis.count { shownEmojiCount += 1}
+            } label: {
+                Image(systemName: "plus.circle")
+            }
         }
         .buttonStyle(.bordered)
         .font(.title2)
         .padding()
     }
-    
-    var addCardsButton: some View {
-        Button {
-            if shownEmojiCount < emojis.count { shownEmojiCount += 1}
-        } label: {
-            Image(systemName: "plus.circle")
-        }
-    }
-    
-    var removeCardsButton: some View {
-        Button {
-            if shownEmojiCount > 2 { shownEmojiCount -= 1}
-        } label: {
-            Image(systemName: "minus.circle")
-        }
-    }
+}
+
+extension ContentView {
+    static let vehicleEmojis = ["🚗","🚕","🚙","🚌","🚎","🏎️","🚓","🚑","🚒","🚐","🛻","🚚","🚛"]
+    static let animalEmojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵"]
+    static let fruitEmojis = ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🍓","🫐","🍒","🍈","🍑","🥭"]
 }
 
 struct CardView: View {
