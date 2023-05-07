@@ -1,7 +1,7 @@
 #  CS193p-SwiftUI-Lecture 3
 
 ## Lecture Topic
-Implement the Memory Game logic
+MVVM and Swift Type System
 
 ## Objective
 * Remove Plus and Minus buttons

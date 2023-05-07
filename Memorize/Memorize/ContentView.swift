@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵"]
+    @StateObject var viewModel: EmojiMemoryGame
     let columns = [GridItem(.adaptive(minimum: 80))]
-    @State var shownEmojiCount = 4
     
     var body: some View {
         VStack {
@@ -19,64 +18,36 @@ struct ContentView: View {
                 .padding(.top)
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10){
-                    ForEach(emojis[0..<shownEmojiCount], id: \.self) { emoji in
-                        CardView(title: emoji, fillColor: .orange)
+                    ForEach(viewModel.cards) { card in
+                        CardView(card: card, fillColor: .orange)
+                            .onTapGesture {
+                                viewModel.choose(card: card)
+                            }
+                            .opacity(card.isMatched ? 0 : 1)
                     }
                 }
                 .padding()
             }
             Spacer()
-            bottomButtons
-        }
-    }
-    
-    var bottomButtons: some View {
-        HStack {
-            removeCardsButton
-            addCardsButton
-        }
-        .buttonStyle(.bordered)
-        .font(.title2)
-        .padding()
-    }
-    
-    var addCardsButton: some View {
-        Button {
-            if shownEmojiCount < emojis.count { shownEmojiCount += 1}
-        } label: {
-            Image(systemName: "plus.circle")
-        }
-    }
-    
-    var removeCardsButton: some View {
-        Button {
-            if shownEmojiCount > 2 { shownEmojiCount -= 1}
-        } label: {
-            Image(systemName: "minus.circle")
         }
     }
 }
 
 struct CardView: View {
+    var card: MemoryGame<String>.Card
+    
     //Params
-    let title: String
     var cornerRadius: CGFloat = 16
     var borderWidth: CGFloat = 4
     var fillColor: Color = .orange
     let aspectRatio: CGFloat = 2/3
     
-    //State
-    @State var isFaceUp: Bool = true
-    
     var body: some View {
         ZStack {
-            if isFaceUp { faceUpView }
+            if card.isFaceUp { faceUpView }
             else { faceDownView }
         }
         .aspectRatio(aspectRatio, contentMode: .fit)
-        .onTapGesture {
-            isFaceUp.toggle()
-        }
     }
     
     var faceUpView: some View {
@@ -88,7 +59,7 @@ struct CardView: View {
                 .strokeBorder(lineWidth: borderWidth)
                 .foregroundColor(fillColor)
             
-            Text(title)
+            Text(card.content)
                 .font(.largeTitle)
         }
     }
@@ -102,7 +73,8 @@ struct CardView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: EmojiMemoryGame())
     }
 }

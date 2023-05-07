@@ -7,25 +7,63 @@
 
 import Foundation
 
-struct MemoryGame<CardContent> {
+struct MemoryGame<CardContent: Equatable> {
     private(set) var cards: [Card]
     
-    func choose(_ card: Card) {
-        //implement choose logic
-    }
+    private var indexOfTheOnlyFaceUpCard: Int?
     
-    struct Card {
-        var isFaceUp = false
-        var isMatched = false
-        var content: CardContent
+    mutating func choose(_ card: Card) {
+        guard let chosenCardIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
+        cards[chosenCardIndex].isFaceUp.toggle()
+        
+        //Has match
+        if cards[chosenCardIndex].isFaceUp == true && !cards[chosenCardIndex].isMatched {
+            if let faceUpCardIndex = indexOfTheOnlyFaceUpCard, cards[faceUpCardIndex].content == card.content {
+                cards[chosenCardIndex].isMatched = true
+                cards[faceUpCardIndex].isMatched = true
+                indexOfTheOnlyFaceUpCard = nil
+            }
+        }
+        
+        //No Match
+        cards.indices.forEach { cards[$0].isFaceUp = false }
+        cards[chosenCardIndex].isFaceUp = true
+        indexOfTheOnlyFaceUpCard = chosenCardIndex
     }
     
     init(numberOfPairsOfCards: Int, createContent: (Int) -> CardContent) {
-        cards = []
+        cards = MemoryGame.generateCards(numberOfPairs: numberOfPairsOfCards, createContent: createContent)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+extension MemoryGame {
+    struct Card: Identifiable {
+        var isFaceUp = false
+        var isMatched = false
+        var content: CardContent
+        var id: Int
+    }
+}
+
+extension MemoryGame {
+    static func generateCards(numberOfPairs: Int, createContent: (Int) -> CardContent) -> [MemoryGame.Card] {
+        var outputCards: [Card] = []
         
-        for pairIndex in 0..<numberOfPairsOfCards {
-            cards.append(Card(content: createContent(pairIndex)))
-            cards.append(Card(content: createContent(pairIndex)))
+        for pairIndex in 0..<numberOfPairs {
+            outputCards.append(Card(content: createContent(pairIndex), id: pairIndex * 2))
+            outputCards.append(Card(content: createContent(pairIndex), id: pairIndex * 2 + 1))
         }
+        
+        return outputCards
     }
 }
