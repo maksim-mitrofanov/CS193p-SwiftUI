@@ -25,7 +25,7 @@
 ## Programming Assignments
 | Assignment                                                                                                                |  Project |  Status   |                                                                                                  
 | :----                                                                                                                     | :----    |  :----:   |                                                                                                      
-| [Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf)             |          |           |     
+| [Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf)             |          | Done ✅   |
 | [Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Assignment%202.pdf)           |          |              |    
 | [Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3_0.pdf)           |          |                   |
 | [Assignment 4](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_4_0.pdf)           |          |                   |
