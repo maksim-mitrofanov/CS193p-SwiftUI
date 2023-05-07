@@ -23,7 +23,7 @@ struct ContentView: View {
                             .onTapGesture {
                                 viewModel.choose(card: card)
                             }
-                            .opacity(card.isMatched ? 0 : 1)
+                            .opacity(card.isMatched ? 0.3 : 1)
                     }
                 }
                 .padding()

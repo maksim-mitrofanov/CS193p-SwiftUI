@@ -26,13 +26,20 @@ struct MemoryGame<CardContent: Equatable> {
         }
         
         //No Match
-        cards.indices.forEach { cards[$0].isFaceUp = false }
+        cards.indices.forEach {
+            cards[$0].isFaceUp = false
+        }
         cards[chosenCardIndex].isFaceUp = true
         indexOfTheOnlyFaceUpCard = chosenCardIndex
+        
+        cards.indices.forEach {
+            if cards[$0].isMatched { cards[$0].isFaceUp = true }
+        }
     }
     
     init(numberOfPairsOfCards: Int, createContent: (Int) -> CardContent) {
         cards = MemoryGame.generateCards(numberOfPairs: numberOfPairsOfCards, createContent: createContent)
+        cards.shuffle()
     }
 }
 
