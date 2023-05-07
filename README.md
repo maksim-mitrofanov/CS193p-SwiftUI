@@ -7,19 +7,19 @@
 | Lecture 1   | Getting Started with SwiftUI                          | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%201)      | Done ✅  |
 | Lecture 2   | Learning More about SwiftUI                           | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%202)      | Done ✅  |
 | Lecture 3   | MVVM                                                  | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%203)      | Done ✅  |
-| Lecture 4   | More MVVM, enum, Optionals                            | Lecture code      |        |
-| Lecture 5   | Properties, Layout, @ViewBuilder                      | Lecture code      |        |
-| Lecture 6   | Protocols, Shapes                                     | Lecture code      |        |
-| Lecture 7   | ViewModifier, Animation                               | Lecture code      |        |
-| Lecture 8   | Animation Demo                                        | Lecture code      |        |                     
-| Lecture 9   | EmojiArt, Drag/Drop                                   | Lecture code      |        |
-| Lecture 10  | Gestures                                              | Lecture code      |        |
-| Lecture 11  | Persistence, Error Handling                           | Lecture code      |        |
-| Lecture 12  | Binding, Sheet, Navigation, EditMode                  | Lecture code      |        |
-| Lecture 13  | Publisher, More Persistence                           | Lecture code      |        |
-| Lecture 14  | Document, Architecture                                | Lecture code      |        |
-| Lecture 15  | UIKit Integration                                     | Lecture code      |        |
-| Lecture 16  | Multiplatform (macOS)                                 | Lecture code      |        |
+| Lecture 4   | More MVVM, enum, Optionals                            | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%204)      | Done ✅  |
+| Lecture 5   | Properties, Layout, @ViewBuilder                      | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%205)      |        |
+| Lecture 6   | Protocols, Shapes                                     | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%206)      |        |
+| Lecture 7   | ViewModifier, Animation                               | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%207)      |        |
+| Lecture 8   | Animation Demo                                        | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%208)      |        |                     
+| Lecture 9   | EmojiArt, Drag/Drop                                   | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%209)      |        |
+| Lecture 10  | Gestures                                              | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2010)      |        |
+| Lecture 11  | Persistence, Error Handling                           | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2011)      |        |
+| Lecture 12  | Binding, Sheet, Navigation, EditMode                  | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2012)      |        |
+| Lecture 13  | Publisher, More Persistence                           | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2013)      |        |
+| Lecture 14  | Document, Architecture                                | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2014)      |        |
+| Lecture 15  | UIKit Integration                                     | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2015)      |        |
+| Lecture 16  | Multiplatform (macOS)                                 | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2016)      |        |
 <br>
 
 ## Programming Assignments
