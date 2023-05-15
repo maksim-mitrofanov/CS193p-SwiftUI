@@ -8,27 +8,37 @@
 import Foundation
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private var gameModel: MemoryGame<String> = EmojiMemoryGame.getGame()
+    @Published private var gameModel = EmojiMemoryGame.getGame()
     
-    var cards: [MemoryGame<String>.Card] {
+    typealias Card = MemoryGame<String>.Card
+    
+    var cards: [Card] {
         gameModel.cards
     }
     
     //MARK: - UserIntents
-    func choose(card: MemoryGame<String>.Card) {
+    func choose(card: Card) {
         gameModel.choose(card)
     }
 }
 
+
+
+
+
+
+
+
+
 extension EmojiMemoryGame {
-    static let emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵"].shuffled()
+    private static let emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵"].shuffled()
     
-    static func getContent(forIndex index: Int) -> String {
+    private static func getContent(forIndex index: Int) -> String {
         if emojis.indices.contains(index) { return emojis[index] }
         else { return "❌" }
     }
     
-    static func getGame() -> MemoryGame<String> {
+    private static func getGame() -> MemoryGame<String> {
         MemoryGame(
             numberOfPairsOfCards: 5,
             createContent: EmojiMemoryGame.getContent(forIndex:)

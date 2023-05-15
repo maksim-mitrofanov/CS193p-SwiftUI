@@ -10,30 +10,23 @@ import Foundation
 struct MemoryGame<CardContent: Equatable> {
     private(set) var cards: [Card]
     
-    private var indexOfTheOnlyFaceUpCard: Int?
+    private var indexOfTheOnlyFaceUpCard: Int? {
+        get { cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly }
+        set { cards.indices.forEach { cards[$0].isFaceUp = $0 == newValue }}
+    }
     
     mutating func choose(_ card: Card) {
         guard let chosenCardIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
-        cards[chosenCardIndex].isFaceUp.toggle()
+        guard !cards[chosenCardIndex].isFaceUp, !cards[chosenCardIndex].isMatched else { return }
         
-        //Has match
-        if cards[chosenCardIndex].isFaceUp == true && !cards[chosenCardIndex].isMatched {
-            if let faceUpCardIndex = indexOfTheOnlyFaceUpCard, cards[faceUpCardIndex].content == card.content {
+        if let matchIndex = indexOfTheOnlyFaceUpCard {
+            if cards[matchIndex].content == cards[chosenCardIndex].content {
+                cards[matchIndex].isMatched = true
                 cards[chosenCardIndex].isMatched = true
-                cards[faceUpCardIndex].isMatched = true
-                indexOfTheOnlyFaceUpCard = nil
             }
-        }
-        
-        //No Match
-        cards.indices.forEach {
-            cards[$0].isFaceUp = false
-        }
-        cards[chosenCardIndex].isFaceUp = true
-        indexOfTheOnlyFaceUpCard = chosenCardIndex
-        
-        cards.indices.forEach {
-            if cards[$0].isMatched { cards[$0].isFaceUp = true }
+            cards[chosenCardIndex].isFaceUp = true
+        } else {
+            indexOfTheOnlyFaceUpCard = chosenCardIndex
         }
     }
     
@@ -57,14 +50,14 @@ extension MemoryGame {
     struct Card: Identifiable {
         var isFaceUp = false
         var isMatched = false
-        var content: CardContent
-        var id: Int
+        let content: CardContent
+        let id: Int
     }
 }
 
 extension MemoryGame {
     static func generateCards(numberOfPairs: Int, createContent: (Int) -> CardContent) -> [MemoryGame.Card] {
-        var outputCards: [Card] = []
+        var outputCards = [Card]()
         
         for pairIndex in 0..<numberOfPairs {
             outputCards.append(Card(content: createContent(pairIndex), id: pairIndex * 2))
@@ -72,5 +65,11 @@ extension MemoryGame {
         }
         
         return outputCards
+    }
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        self.count == 1 ? self[0] : nil
     }
 }
