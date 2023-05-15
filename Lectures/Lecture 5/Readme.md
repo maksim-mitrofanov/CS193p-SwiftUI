@@ -17,7 +17,9 @@ Refactor code in all classes / structs, update the UI
 
 ## Demo
 
-https://user-images.githubusercontent.com/87092187/236703455-671ec8f2-4ea7-4adc-bd42-60aee6b9b095.mp4
 
+
+
+https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/0dc9d7f0-c080-47c4-a5c1-01e89fcdf71b
 
 
