@@ -25,8 +25,8 @@
 ## Programming Assignments
 | Assignment                                                                                                                |  Project |  Status   |                                                                                                  
 | :----                                                                                                                     | :----:    |  :----:   |                                                                                                      
-| [Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf)             | [Finished Project](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/blob/main/Assignments/Assignment%201.md)         | Done ✅   |
-| [Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Assignment%202.pdf)           | [Finished Project](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/blob/main/Assignments/Assignment%202.md)         |  Done ✅  |    
+| [Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf)             | [Finished Project](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/blob/main/Assignments/Assignment%201/Assignment%201.md)         | Done ✅   |
+| [Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Assignment%202.pdf)           | [Finished Project](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/blob/main/Assignments/Assignment%202/Assignment%202.md)         |  Done ✅  |    
 | [Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3_0.pdf)           |          |                   |
 | [Assignment 4](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_4_0.pdf)           |          |                   |
 | [Assignment 5](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_5_0.pdf)           |          |                  |
