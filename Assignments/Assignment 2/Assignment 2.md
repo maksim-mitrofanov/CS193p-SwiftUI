@@ -10,6 +10,8 @@ Extend the code from lectures 1 & 2 & 3
 * The scoring system works as follows: +2 points for every match, -1 point for every card in a mismatch that was already seen. 
 
 ## Demo
+https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/de488573-7a2e-4611-95d8-7ba5a7f8c6b3
+
 
 
 
