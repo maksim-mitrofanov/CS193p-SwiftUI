@@ -39,7 +39,9 @@ struct CardView: View {
     
     var cardContents: some View {
         ZStack {
-            Circle()
+            PieShape(
+                startAngle: Angle(degrees: 0 - 90),
+                endAngle: Angle(degrees: 50 - 90))
                 .scale(backgroundCircleScale)
                 .opacity(0.55)
             Text(card.content)
