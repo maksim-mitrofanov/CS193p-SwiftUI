@@ -9,7 +9,8 @@ Create a new view combiner that fits all cards on screen and places them based o
 * Create a new View that takes an array of items as one of it's parameters
 * Calculate width for grid items based on the amount of items passed, as well as columns that can be constructed with the views of specified aspect ratio
 * Make sure that all matched cards are face up
-* Add a Pie as a counter for the background of emojis
+* Add a PieShape to the background of emojis
+* Make Pie chart change based on start / end angle that is passed to it
 
 
 
