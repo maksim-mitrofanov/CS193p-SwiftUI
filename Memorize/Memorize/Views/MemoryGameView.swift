@@ -27,7 +27,7 @@ struct MemoryGameView: View {
     }
     
     var cards: some View {
-        AspectVGrid(items: emojiGame.cards, aspectRatio: 2/3) { card in
+        AspectVGrid(items: emojiGame.cards, aspectRatio: 5/6.5) { card in
             CardView(card: card,fillColor: .orange)
                 .onTapGesture {
                     emojiGame.choose(card: card)
@@ -38,7 +38,7 @@ struct MemoryGameView: View {
 }
 
 struct MemoryGameView_Previews: PreviewProvider {
-    static let game = EmojiMemoryGame(cardCount: 8)
+    static let game = EmojiMemoryGame(cardCount: 10)
     
     static var previews: some View {
         game.choose(card: game.cards[0])

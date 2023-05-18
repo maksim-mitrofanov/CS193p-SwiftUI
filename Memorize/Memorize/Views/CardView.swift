@@ -41,6 +41,7 @@ struct CardView: View {
         ZStack {
             Circle()
                 .scale(backgroundCircleScale)
+                .opacity(0.55)
             Text(card.content)
         }
     }
