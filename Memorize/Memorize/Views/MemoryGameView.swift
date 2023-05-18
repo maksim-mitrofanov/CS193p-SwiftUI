@@ -1,5 +1,5 @@
 //
-//  EmojiMemoryGameView.swift
+//  MemoryGameView.swift
 //  Memorize
 //
 //  Created by Максим Митрофанов on 05.05.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmojiMemoryGameView: View {
+struct MemoryGameView: View {
     @ObservedObject var emojiGame: EmojiMemoryGame
     private let columns = [GridItem(.adaptive(minimum: 80))]
     
@@ -33,9 +33,9 @@ struct EmojiMemoryGameView: View {
     }
 }
 
-struct EmojiMemoryGameView_Previews: PreviewProvider {
+struct MemoryGameView_Previews: PreviewProvider {
     
     static var previews: some View {
-        EmojiMemoryGameView(emojiGame: EmojiMemoryGame())
+        MemoryGameView(emojiGame: EmojiMemoryGame())
     }
 }
