@@ -18,4 +18,8 @@ Create a new view combiner that fits all cards on screen and places them based o
 ## Demo
 
 
+https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/19d367ca-89ae-4cec-a6c2-432f05dbfc53
+
+
+
 
