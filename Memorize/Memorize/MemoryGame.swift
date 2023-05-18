@@ -36,25 +36,6 @@ struct MemoryGame<CardContent: Equatable> {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-extension MemoryGame {
-    struct Card: Identifiable {
-        var isFaceUp = false
-        var isMatched = false
-        let content: CardContent
-        let id: Int
-    }
-}
-
 extension MemoryGame {
     static func generateCards(numberOfPairs: Int, createContent: (Int) -> CardContent) -> [MemoryGame.Card] {
         var outputCards = [Card]()
@@ -68,8 +49,3 @@ extension MemoryGame {
     }
 }
 
-extension Array {
-    var oneAndOnly: Element? {
-        self.count == 1 ? self[0] : nil
-    }
-}
