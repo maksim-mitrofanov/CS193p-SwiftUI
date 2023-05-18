@@ -22,32 +22,33 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            let cornerRadius = calculateCornerRadius(for: geometry)
+            let cardShape = createCardShape(for: geometry)
             
             ZStack {
                 if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .foregroundColor(.white)
-                    
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .strokeBorder(lineWidth: borderWidth)
-                    
-                    ZStack {
-                        Circle()
-                            .scale(backgroundCircleScale)
-                        Text(card.content)
-                    }
-                    .font(font(for: geometry))
+                    cardShape.foregroundColor(.white)
+                    cardShape.strokeBorder(lineWidth: borderWidth)
+                    cardContents.font(font(for: geometry))
                 }
 
-                else {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                }
+                else { cardShape }
             }
             .foregroundColor(fillColor)
         }
     }
     
+    var cardContents: some View {
+        ZStack {
+            Circle()
+                .scale(backgroundCircleScale)
+            Text(card.content)
+        }
+    }
+    
+    private func createCardShape(for proxy: GeometryProxy) -> RoundedRectangle {
+        RoundedRectangle(cornerRadius: calculateCornerRadius(for: proxy))
+    }
+        
     private func calculateCornerRadius(for proxy: GeometryProxy) ->  CGFloat {
         proxy.size.height / cornerRadiusOffset
    }
