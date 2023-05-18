@@ -13,17 +13,17 @@ struct CardView: View {
     //Params
     var borderWidth: CGFloat = 4
     var fillColor: Color = .orange
-    let aspectRatio: CGFloat = 2/3
     
     var body: some View {
         GeometryReader { geometry in
+            let cornerRadius = geometry.size.height / 11
             ZStack {
                 // Face Up
                 if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: geometry.size.height / 10)
+                    RoundedRectangle(cornerRadius: cornerRadius)
                         .foregroundColor(.white)
                     
-                    RoundedRectangle(cornerRadius: geometry.size.height / 10)
+                    RoundedRectangle(cornerRadius: cornerRadius)
                         .strokeBorder(lineWidth: borderWidth)
                         .foregroundColor(fillColor)
                     
@@ -32,12 +32,11 @@ struct CardView: View {
                 }
                 // Face Down
                 else {
-                    RoundedRectangle(cornerRadius: geometry.size.height / 10)
+                    RoundedRectangle(cornerRadius: cornerRadius)
                         .foregroundColor(fillColor)
                 }
             }
         }
-        .aspectRatio(aspectRatio, contentMode: .fit)
     }
     
     private func font(for geometry: GeometryProxy) -> Font {

@@ -15,7 +15,6 @@ struct MemoryGameView: View {
         VStack {
             title
             cards
-            Spacer()
         }
     }
     
@@ -26,24 +25,21 @@ struct MemoryGameView: View {
     }
     
     var cards: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 10){
-                ForEach(emojiGame.cards) { card in
-                    CardView(card: card, fillColor: .orange)
-                        .onTapGesture {
-                            emojiGame.choose(card: card)
-                        }
-                        .opacity(card.isMatched ? 0.3 : 1)
+        AspectVGrid(items: emojiGame.cards, aspectRatio: 2/3) { card in
+            CardView(card: card,fillColor: .orange)
+                .onTapGesture {
+                    emojiGame.choose(card: card)
                 }
-            }
-            .padding()
+                .opacity(card.isMatched ? 0.3 : 1)
         }
     }
 }
 
 struct MemoryGameView_Previews: PreviewProvider {
+    static let game = EmojiMemoryGame(cardCount: 14)
     
     static var previews: some View {
-        MemoryGameView(emojiGame: EmojiMemoryGame())
+        MemoryGameView(emojiGame: game)
+            .padding()
     }
 }

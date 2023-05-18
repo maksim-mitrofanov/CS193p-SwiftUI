@@ -20,6 +20,10 @@ class EmojiMemoryGame: ObservableObject {
     func choose(card: Card) {
         gameModel.choose(card)
     }
+    
+    init(cardCount: Int = 6) {
+        gameModel = EmojiMemoryGame.getGame(with: Int(cardCount / 2))
+    }
 }
 
 
@@ -38,9 +42,9 @@ extension EmojiMemoryGame {
         else { return "❌" }
     }
     
-    private static func getGame() -> MemoryGame<String> {
+    private static func getGame(with numberOfPairsOfCards: Int = 3) -> MemoryGame<String> {
         MemoryGame(
-            numberOfPairsOfCards: 5,
+            numberOfPairsOfCards: numberOfPairsOfCards,
             createContent: EmojiMemoryGame.getContent(forIndex:)
         )
     }
