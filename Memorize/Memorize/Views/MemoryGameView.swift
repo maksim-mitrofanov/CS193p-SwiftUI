@@ -13,22 +13,30 @@ struct MemoryGameView: View {
     
     var body: some View {
         VStack {
-            Text("Memorize!")
-                .font(.system(size: 30, design: .serif))
-                .padding(.top)
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 10){
-                    ForEach(emojiGame.cards) { card in
-                        CardView(card: card, fillColor: .orange)
-                            .onTapGesture {
-                                emojiGame.choose(card: card)
-                            }
-                            .opacity(card.isMatched ? 0.3 : 1)
-                    }
-                }
-                .padding()
-            }
+            title
+            cards
             Spacer()
+        }
+    }
+    
+    var title: some View {
+        Text("Memorize!")
+            .font(.system(size: 30, design: .serif))
+            .padding(.top)
+    }
+    
+    var cards: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10){
+                ForEach(emojiGame.cards) { card in
+                    CardView(card: card, fillColor: .orange)
+                        .onTapGesture {
+                            emojiGame.choose(card: card)
+                        }
+                        .opacity(card.isMatched ? 0.3 : 1)
+                }
+            }
+            .padding()
         }
     }
 }
