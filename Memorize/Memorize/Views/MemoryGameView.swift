@@ -16,6 +16,8 @@ struct MemoryGameView: View {
             title
             cards
         }
+        .padding()
+        
     }
     
     var title: some View {
@@ -40,6 +42,5 @@ struct MemoryGameView_Previews: PreviewProvider {
     
     static var previews: some View {
         MemoryGameView(emojiGame: game)
-            .padding()
     }
 }
