@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		4C56984A2A176D8400EAEAFC /* SET_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698492A176D8400EAEAFC /* SET_GameApp.swift */; };
-		4C56984C2A176D8400EAEAFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56984B2A176D8400EAEAFC /* ContentView.swift */; };
+		4C56984C2A176D8400EAEAFC /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56984B2A176D8400EAEAFC /* SetGameView.swift */; };
 		4C56984E2A176D8600EAEAFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C56984D2A176D8600EAEAFC /* Assets.xcassets */; };
 		4C5698512A176D8600EAEAFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5698502A176D8600EAEAFC /* Preview Assets.xcassets */; };
+		4C5698582A176DC900EAEAFC /* SetGameThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698572A176DC900EAEAFC /* SetGameThemeModel.swift */; };
+		4C56985A2A176DD900EAEAFC /* SetGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698592A176DD900EAEAFC /* SetGameModel.swift */; };
+		4C56985C2A176DE100EAEAFC /* SetCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56985B2A176DE100EAEAFC /* SetCardModel.swift */; };
+		4C56985E2A176E5D00EAEAFC /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56985D2A176E5D00EAEAFC /* AspectVGrid.swift */; };
+		4C5698622A176EDF00EAEAFC /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698612A176EDF00EAEAFC /* SetCardView.swift */; };
+		4C5698652A1771DF00EAEAFC /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698642A1771DF00EAEAFC /* NSMutableAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C5698462A176D8400EAEAFC /* SET Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SET Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5698492A176D8400EAEAFC /* SET_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SET_GameApp.swift; sourceTree = "<group>"; };
-		4C56984B2A176D8400EAEAFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C56984B2A176D8400EAEAFC /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		4C56984D2A176D8600EAEAFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C5698502A176D8600EAEAFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C5698572A176DC900EAEAFC /* SetGameThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGameThemeModel.swift; sourceTree = "<group>"; };
+		4C5698592A176DD900EAEAFC /* SetGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGameModel.swift; sourceTree = "<group>"; };
+		4C56985B2A176DE100EAEAFC /* SetCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCardModel.swift; sourceTree = "<group>"; };
+		4C56985D2A176E5D00EAEAFC /* AspectVGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		4C5698612A176EDF00EAEAFC /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
+		4C5698642A1771DF00EAEAFC /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,10 @@
 		4C5698482A176D8400EAEAFC /* SET Game */ = {
 			isa = PBXGroup;
 			children = (
+				4C5698632A1771D100EAEAFC /* SwiftUI Extensions */,
 				4C5698492A176D8400EAEAFC /* SET_GameApp.swift */,
-				4C56984B2A176D8400EAEAFC /* ContentView.swift */,
+				4C5698602A176EC800EAEAFC /* Views */,
+				4C56985F2A176EB700EAEAFC /* Models */,
 				4C56984D2A176D8600EAEAFC /* Assets.xcassets */,
 				4C56984F2A176D8600EAEAFC /* Preview Content */,
 			);
@@ -65,6 +79,34 @@
 				4C5698502A176D8600EAEAFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C56985F2A176EB700EAEAFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C5698592A176DD900EAEAFC /* SetGameModel.swift */,
+				4C56985B2A176DE100EAEAFC /* SetCardModel.swift */,
+				4C5698572A176DC900EAEAFC /* SetGameThemeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C5698602A176EC800EAEAFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C56984B2A176D8400EAEAFC /* SetGameView.swift */,
+				4C56985D2A176E5D00EAEAFC /* AspectVGrid.swift */,
+				4C5698612A176EDF00EAEAFC /* SetCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C5698632A1771D100EAEAFC /* SwiftUI Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C5698642A1771DF00EAEAFC /* NSMutableAttributedString.swift */,
+			);
+			path = "SwiftUI Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C56984C2A176D8400EAEAFC /* ContentView.swift in Sources */,
+				4C56985C2A176DE100EAEAFC /* SetCardModel.swift in Sources */,
+				4C5698582A176DC900EAEAFC /* SetGameThemeModel.swift in Sources */,
+				4C5698622A176EDF00EAEAFC /* SetCardView.swift in Sources */,
+				4C56985E2A176E5D00EAEAFC /* AspectVGrid.swift in Sources */,
+				4C5698652A1771DF00EAEAFC /* NSMutableAttributedString.swift in Sources */,
+				4C56984C2A176D8400EAEAFC /* SetGameView.swift in Sources */,
+				4C56985A2A176DD900EAEAFC /* SetGameModel.swift in Sources */,
 				4C56984A2A176D8400EAEAFC /* SET_GameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
