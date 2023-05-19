@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct SetGameView: View {
-    let game = SetGameModel(deals: 7)
+    @ObservedObject var game = SetGameViewModel()
     
     var body: some View {
         ZStack {
             Color.red.opacity(0.9)
                 .edgesIgnoringSafeArea(.all)
             
-            AspectVGrid(items: game.displayedCards, aspectRatio: 2/3) { cardData in
-                SetCardView(model: cardData)
+            VStack {
+                AspectVGrid(items: game.displayedCards, aspectRatio: 2/3) { cardData in
+                    SetCardView(model: cardData)
+                }
+                Button {
+                    game.dealMoreCards()
+                } label: {
+                    Text("Deal more cards")
+                        .font(.title2)
+                }
+                .buttonStyle(.borderedProminent)
             }
             .padding(.horizontal)
         }

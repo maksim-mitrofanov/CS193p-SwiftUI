@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1391752A17C74700FE92E9 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1391742A17C74700FE92E9 /* SetGameViewModel.swift */; };
 		4C56984A2A176D8400EAEAFC /* SET_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5698492A176D8400EAEAFC /* SET_GameApp.swift */; };
 		4C56984C2A176D8400EAEAFC /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56984B2A176D8400EAEAFC /* SetGameView.swift */; };
 		4C56984E2A176D8600EAEAFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C56984D2A176D8600EAEAFC /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1391742A17C74700FE92E9 /* SetGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
 		4C5698462A176D8400EAEAFC /* SET Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SET Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5698492A176D8400EAEAFC /* SET_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SET_GameApp.swift; sourceTree = "<group>"; };
 		4C56984B2A176D8400EAEAFC /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				4C5698632A1771D100EAEAFC /* SwiftUI Extensions */,
 				4C56984D2A176D8600EAEAFC /* Assets.xcassets */,
 				4C56984F2A176D8600EAEAFC /* Preview Content */,
+				4C1391742A17C74700FE92E9 /* SetGameViewModel.swift */,
 			);
 			path = "SET Game";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				4C56985C2A176DE100EAEAFC /* SetCardModel.swift in Sources */,
 				4C5698582A176DC900EAEAFC /* SetGameThemeModel.swift in Sources */,
 				4C5698622A176EDF00EAEAFC /* SetCardView.swift in Sources */,
+				4C1391752A17C74700FE92E9 /* SetGameViewModel.swift in Sources */,
 				4C56985E2A176E5D00EAEAFC /* AspectVGrid.swift in Sources */,
 				4C5698652A1771DF00EAEAFC /* NSMutableAttributedString.swift in Sources */,
 				4C56984C2A176D8400EAEAFC /* SetGameView.swift in Sources */,
