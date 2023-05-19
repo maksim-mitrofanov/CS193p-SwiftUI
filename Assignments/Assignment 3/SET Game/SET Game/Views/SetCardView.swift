@@ -11,7 +11,8 @@ struct SetCardView: View {
     let model: SetCardModel
     
     var body: some View {
-        SetGameThemeModel.getAttributedTitle(for: model).asText()
+        SetGameThemeModel.getDisplayedShape(for: model)
+            .aspectRatio(8/5, contentMode: .fit)
     }
 }
 
@@ -20,11 +21,16 @@ struct SetCardView_Previews: PreviewProvider {
         let game = SetGameModel(demo: true)
         let gameCards = game.displayedCards
         
-        VStack {
+        ScrollView {
             Text(gameCards.count.description)
             
             ForEach(gameCards) { card in
-                SetCardView(model: card)
+                VStack {
+                    SetCardView(model: card)
+                        .frame(width: 100, height: 100)
+                        .padding(.vertical, 5)
+                    Divider()
+                }
             }
         }
     }

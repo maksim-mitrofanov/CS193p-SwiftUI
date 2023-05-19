@@ -63,10 +63,10 @@
 		4C5698482A176D8400EAEAFC /* SET Game */ = {
 			isa = PBXGroup;
 			children = (
-				4C5698632A1771D100EAEAFC /* SwiftUI Extensions */,
 				4C5698492A176D8400EAEAFC /* SET_GameApp.swift */,
 				4C5698602A176EC800EAEAFC /* Views */,
 				4C56985F2A176EB700EAEAFC /* Models */,
+				4C5698632A1771D100EAEAFC /* SwiftUI Extensions */,
 				4C56984D2A176D8600EAEAFC /* Assets.xcassets */,
 				4C56984F2A176D8600EAEAFC /* Preview Content */,
 			);
