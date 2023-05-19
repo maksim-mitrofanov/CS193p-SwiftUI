@@ -13,20 +13,26 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
     var aspectRatio: CGFloat
     var content: (Item) -> ItemView
     var spacing: CGFloat = 4
+    var minItemWidth: CGFloat = 80
     
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                let width: CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
+                let maxWidth = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
+                let width = max(minItemWidth, maxWidth)
                 
-                LazyVGrid(columns: [adaptiveGridItem(with: width)], spacing: 0) {
-                    ForEach(items) { item in
-                        content(item)
-                            .aspectRatio(aspectRatio, contentMode: .fit)
-                            .padding(spacing)
+                
+                ScrollView {
+                    LazyVGrid(columns: [adaptiveGridItem(with: width)], spacing: 0) {
+                        ForEach(items) { item in
+                            content(item)
+                                .aspectRatio(aspectRatio, contentMode: .fit)
+                                .padding(spacing)
+                        }
                     }
                 }
+                .scrollIndicators(.hidden)
                 
                 Spacer(minLength: 0)
             }
