@@ -16,7 +16,12 @@ struct SetGameModel {
         status == "Match: ✅"
     }
     
-    private(set) var selectedCardIndices = [Int]()
+    var canDealMoreCards: Bool {
+        displayedCards.count <= 21
+    }
+    
+    private(set) var shouldReplaceSelectedCards: Bool = false
+        private(set) var selectedCardIndices = [Int]()
     private var cardsInTheDeck = [SetCardModel]()
     
     var cardsLeftCount: Int {
@@ -26,11 +31,6 @@ struct SetGameModel {
     init() {
         cardsInTheDeck = SetGameModel.getAllPossibleCards()
         setDisplayedCards()
-    }
-    
-    init(deals: Int) {
-        cardsInTheDeck = SetGameModel.getAllPossibleCards()
-        setDemoCards(deals: deals)
     }
     
     mutating func selectCard(at index: Int) {
@@ -47,6 +47,8 @@ struct SetGameModel {
                 let areMatching = checkCardsForMatching(at: selectedCardIndices)
                 score += areMatching ? 5 : -1
                 status = areMatching ? "Match: ✅" : "Match: ❌"
+                
+                shouldReplaceSelectedCards = areMatching
             }
         }
         
@@ -87,12 +89,6 @@ struct SetGameModel {
 extension SetGameModel {
     private mutating func setDisplayedCards() {
         for _ in 1...4 {
-            addMoreCards()
-        }
-    }
-    
-    private mutating func setDemoCards(deals: Int) {
-        for _ in 1...deals {
             addMoreCards()
         }
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SetCardView: View {
     let model: SetCardModel
+    let isSelected: Bool
     
     var body: some View {
         ZStack {
@@ -18,6 +19,12 @@ struct SetCardView: View {
             
             SetGameThemeModel.getDisplayedShape(for: model)
                 .padding(paddingSize)
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(lineWidth: 3)
+                .foregroundColor(.black)
+                .opacity(isSelected ? 1 : 0)
         }
     }
     
