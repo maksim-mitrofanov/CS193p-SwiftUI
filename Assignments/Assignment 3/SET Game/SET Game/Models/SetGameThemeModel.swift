@@ -11,7 +11,7 @@ struct SetGameThemeModel {
     private static func getBaseColor(for card: SetCardModel) -> Color {
         let cardColor: Color = {
             switch card.color {
-            case .red: return .red
+            case .red: return .blue
             case .green: return .green
             case .purple: return .purple
             }
@@ -24,7 +24,7 @@ struct SetGameThemeModel {
         let cardColor = getBaseColor(for: card)
         let colorWithOpacity: Color = {
             switch card.fillStyle {
-            case .filled: return cardColor
+            case .filled: return cardColor.opacity(0.8)
             case .outlined: return .clear
             case .striped: return cardColor.opacity(0.2)
             }
@@ -59,7 +59,7 @@ struct SetGameThemeModel {
                 case .square:
                     getSquareShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
                 case .circle:
-                    getSquareShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
+                    getCircleShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
                 case .rect:
                     getRectangleShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
                 }
@@ -97,26 +97,30 @@ struct SetGameThemeModel {
         let aspectRatio: CGFloat = 1/1
         
         return VStack {
-            if isStroked {
-                ZStack {
-                    shape
-                        .stroke()
-                        .foregroundColor(strokeColor)
-                    
-                    shape
-                        .foregroundColor(fillColor)
-                }
-                .aspectRatio(aspectRatio, contentMode: .fit)
-                .rotationEffect(Angle(degrees: 45))
-            }
-            
-            else {
-                shape
-                    .foregroundColor(fillColor)
+            VStack {
+                
+                if isStroked {
+                    ZStack {
+                        shape
+                            .stroke()
+                            .foregroundColor(strokeColor)
+                        
+                        shape
+                            .foregroundColor(fillColor)
+                    }
                     .aspectRatio(aspectRatio, contentMode: .fit)
                     .rotationEffect(Angle(degrees: 45))
-
+                }
+                
+                else {
+                    shape
+                        .foregroundColor(fillColor)
+                        .aspectRatio(aspectRatio, contentMode: .fit)
+                        .rotationEffect(Angle(degrees: 45))
+                    
+                }
             }
+            .scaleEffect(0.7)
         }
     }
     
@@ -145,44 +149,6 @@ struct SetGameThemeModel {
             }
         }
     }
-    
-//    private static func getShape(for card: SetCardModel) -> some View {
-//        let cardShape: some View = {
-//            switch card.symbol {
-//            case .rect: return rectangleShape
-//            case .circle: return circleShape
-//            case .square: return squareShape
-//            }
-//        }()
-//
-//        var rectangleShape: some View {
-//            RoundedRectangle(cornerRadius: 10)
-//                .aspectRatio(5/2, contentMode: .fit)
-//        }
-//
-//        var circleShape: some View {
-//            Circle()
-//                .aspectRatio(1/1, contentMode: .fit)
-//        }
-//
-//        var squareShape: some View {
-//            RoundedRectangle(cornerRadius: 1)
-//                .aspectRatio(1/1, contentMode: .fit)
-//        }
-//
-//        return cardShape
-//    }
-    
-//    static func getAttributedTitle(for card: SetCardModel) -> NSMutableAttributedString {
-//        let cardTitle = SetGameThemeModel.getTitle(for: card)
-//        let cardTitleAttributes: [NSAttributedString.Key : Any] = [
-//            .strokeColor : SetGameThemeModel.getStrokeColor(for: card),
-//            .strokeWidth: -5,
-//            .foregroundColor : SetGameThemeModel.getFillColor(for: card)
-//        ]
-//        
-//        return NSMutableAttributedString(string: cardTitle, attributes: cardTitleAttributes)
-//    }
     
     static func getDisplayedShape(for card: SetCardModel) -> some View {
         VStack {

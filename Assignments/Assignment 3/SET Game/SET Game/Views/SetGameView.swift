@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct SetGameView: View {
+    let game = SetGameModel(deals: 7)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color.red.opacity(0.9)
+                .edgesIgnoringSafeArea(.all)
+            
+            AspectVGrid(items: game.displayedCards, aspectRatio: 2/3) { cardData in
+                SetCardView(model: cardData)
+            }
+            .padding(.horizontal)
         }
-        .padding()
     }
 }
 

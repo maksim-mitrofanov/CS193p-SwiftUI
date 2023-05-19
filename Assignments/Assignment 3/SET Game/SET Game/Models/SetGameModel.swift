@@ -28,14 +28,9 @@ struct SetGameModel {
         setDisplayedCards()
     }
     
-    init(demo isForDemo: Bool) {
+    init(deals: Int) {
         cardsInTheDeck = SetGameModel.getAllPossibleCards()
-        
-        if isForDemo {
-            setDemoCards()
-        } else {
-            setDisplayedCards()
-        }
+        setDemoCards(deals: deals)
     }
     
     mutating func selectCard(at index: Int) {
@@ -96,8 +91,8 @@ extension SetGameModel {
         }
     }
     
-    private mutating func setDemoCards() {
-        for _ in 1...8 {
+    private mutating func setDemoCards(deals: Int) {
+        for _ in 1...deals {
             addMoreCards()
         }
     }

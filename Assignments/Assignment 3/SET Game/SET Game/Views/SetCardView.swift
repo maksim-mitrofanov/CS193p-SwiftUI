@@ -11,27 +11,21 @@ struct SetCardView: View {
     let model: SetCardModel
     
     var body: some View {
-        SetGameThemeModel.getDisplayedShape(for: model)
-            .aspectRatio(8/5, contentMode: .fit)
-    }
-}
-
-struct SetCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        let game = SetGameModel(demo: true)
-        let gameCards = game.displayedCards
-        
-        ScrollView {
-            Text(gameCards.count.description)
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(.white)
+                .shadow(color: .black.opacity(0.1),radius: 5)
             
-            ForEach(gameCards) { card in
-                VStack {
-                    SetCardView(model: card)
-                        .frame(width: 100, height: 100)
-                        .padding(.vertical, 5)
-                    Divider()
-                }
-            }
+            SetGameThemeModel.getDisplayedShape(for: model)
+                .padding(paddingSize)
+        }
+    }
+    
+    var paddingSize: CGFloat {
+        switch model.symbolCount {
+        case .one: return 15
+        case .two: return 12
+        case .three: return 10
         }
     }
 }
