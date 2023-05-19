@@ -50,11 +50,12 @@ struct SetGameThemeModel {
     private static func cardShape(for card: SetCardModel) -> some View {
         VStack {
             let symbolCount = card.symbolCount.rawValue
+            let range = 0..<symbolCount
             let fillColor = getFillColor(for: card)
             let strokeColor = getStrokeColor(for: card)
             let isStroked = card.fillStyle != .filled
             
-            ForEach(0..<symbolCount) { _ in
+            ForEach(range) { _ in
                 switch card.symbol {
                 case .square:
                     getSquareShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
@@ -93,7 +94,7 @@ struct SetGameThemeModel {
     }
     
     private static func getSquareShape(fillColor: Color, strokeColor: Color, isStroked: Bool) -> some View {
-        let shape = RoundedRectangle(cornerRadius: 5)
+        let shape = RoundedRectangle(cornerRadius: 2)
         let aspectRatio: CGFloat = 1/1
         
         return VStack {
