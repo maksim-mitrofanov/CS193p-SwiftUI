@@ -55,7 +55,7 @@ struct SetGameThemeModel {
             let strokeColor = getStrokeColor(for: card)
             let isStroked = card.fillStyle != .filled
             
-            ForEach(range) { _ in
+            ForEach(range, id: \.self) { _ in
                 switch card.symbol {
                 case .square:
                     getSquareShape(fillColor: fillColor, strokeColor: strokeColor, isStroked: isStroked)
