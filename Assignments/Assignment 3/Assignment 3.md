@@ -20,6 +20,7 @@ The objective of Assignment II is to create a solo game of Set from scratch. [Se
 
 ## Demo
 
+https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/9b436097-0dc2-4b86-a9e4-044155b28252
 
 
 
