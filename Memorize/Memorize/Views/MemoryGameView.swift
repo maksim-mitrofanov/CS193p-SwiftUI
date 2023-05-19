@@ -38,7 +38,7 @@ struct MemoryGameView: View {
 }
 
 struct MemoryGameView_Previews: PreviewProvider {
-    static let game = EmojiMemoryGame(cardCount: 10)
+    static let game = EmojiMemoryGame(cardCount: 26)
     
     static var previews: some View {
         game.choose(card: game.cards[0])
