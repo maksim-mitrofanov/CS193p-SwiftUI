@@ -30,7 +30,9 @@ struct MemoryGameView: View {
         AspectVGrid(items: emojiGame.cards, aspectRatio: 5/6.5) { card in
             CardView(card: card,fillColor: .orange)
                 .onTapGesture {
-                    emojiGame.choose(card: card)
+                    withAnimation {
+                        emojiGame.choose(card: card)
+                    }
                 }
                 .opacity(card.isMatched ? 0.3 : 1)
         }
