@@ -19,18 +19,20 @@ struct CardView: View {
     private let backgroundCircleScale: CGFloat = 0.85
     
     var body: some View {
-        cardContents.cardify(isFaceUp: card.isFaceUp)
+        cardContents
+            .cardify(isFaceUp: card.isFaceUp)
     }
     
     var cardContents: some View {
         GeometryReader { proxy in
-        ZStack {
+            ZStack {
                 PieShape(
                     startAngle: Angle(degrees: 0 - 90),
                     endAngle: Angle(degrees: 50 - 90))
                 .scale(backgroundCircleScale)
                 .opacity(0.55)
                 Text(card.content)
+                    .rotationEffect(Angle(degrees: card.isMatched ? 360 : 0))
                     .font(font(for: proxy))
             }
         }

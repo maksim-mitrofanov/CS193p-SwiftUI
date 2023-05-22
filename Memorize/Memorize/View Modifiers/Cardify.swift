@@ -26,12 +26,12 @@ struct Cardify: ViewModifier {
                     cardShape.foregroundColor(.white)
                     cardShape.strokeBorder(lineWidth: borderWidth)
                     content
-                        .transition(AnyTransition.scale)
+                        .transition(AnyTransition.scale.animation(.easeInOut(duration: 0.25)))
                 }
 
                 else {
                     cardShape
-                        .transition(AnyTransition.opacity)
+                        .transition(AnyTransition.scale)
                 }
             }
             .foregroundColor(fillColor)
