@@ -10,7 +10,7 @@
 | Lecture 4   | More MVVM, enum, Optionals                            | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%204)      | Done ✅  |
 | Lecture 5   | Properties, Layout, @ViewBuilder                      | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%205)      | Done ✅  |
 | Lecture 6   | Protocols, Shapes                                     | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%206)      | Done ✅  |
-| Lecture 7   | ViewModifier, Animation                               | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%207)      | In Progress ✨ |
+| Lecture 7   | ViewModifier, Animation                               | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%207)      | Done ✅ |
 | Lecture 8   | Animation Demo                                        | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%208)      |        |                     
 | Lecture 9   | EmojiArt, Drag/Drop                                   | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%209)      |        |
 | Lecture 10  | Gestures                                              | [Lecture code](https://github.com/maksim-mitrofanov/CS193p-SwiftUI/tree/main/Lectures/Lecture%2010)      |        |
