@@ -13,7 +13,7 @@ struct CardView: View {
     //Params
     var card: EmojiMemoryGame.Card
     var fillColor: Color = .orange
-    var fontOffset: CGFloat = 2
+    var fontOffset: CGFloat = 1.6
     
     //Constants
     private let backgroundCircleScale: CGFloat = 0.85
