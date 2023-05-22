@@ -13,14 +13,15 @@ Animate the timer on cards
 https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/054fe72f-bf3d-4b86-be7c-b00b6d81eb90
 
 ## Slides
-<img width="1680" alt="Снимок экрана 2023-05-22 в 14 00 48" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/7b6c7a90-44c0-4b56-82bd-71d4d3e56223">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 59 51" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/ed428475-4eca-4bf6-b63c-df66a08e395f">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 56 49" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/4cf07d1d-59ec-4c53-8418-90542aeacf9f">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 56 42" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/692550fd-66ae-4e1c-95bb-bac4b88262bf">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 54 25" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/7b4d357c-c35b-4bcf-8cc9-d70dc964279a">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 36 36" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/bee0c84d-73fb-49e3-a811-88452a30badc">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 13 31 45" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/2cadced0-d0f0-4bbc-a547-5622b9725297">
-<img width="1680" alt="Снимок экрана 2023-05-22 в 14 03 56" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/8cb8fc2f-ee96-4058-9aad-fd5a050ecade">
+<img width="1680" alt="Lecture 7 Slide 1" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/059c0db0-4913-4c08-a61b-214f12d6c596">
+<img width="1680" alt="Lecture 7 Slide 2" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/cc2720ee-cbee-49e9-8b0d-df36fa093ce8">
+<img width="1680" alt="Lecture 7 Slide 3" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/005790f5-8e59-4cb9-be81-dd67001e4e03">
+<img width="1680" alt="Lecture 7 Slide 4" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/c3e6849f-71b2-4746-8b26-adf78780d492">
+<img width="1680" alt="Lecture 7 Slide 5" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/adc65f2c-0ed7-4657-bf13-df18e23f8b33">
+<img width="1680" alt="Lecture 7 Slide 6" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/79a8be15-dc23-45fa-8cd3-73712ff1512f">
+<img width="1680" alt="Lecture 7 Slide 7" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/bf33edbc-b65b-48e9-b23a-e1fe98a776f8">
+<img width="1680" alt="Lecture 7 Slide 8" src="https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/c926db85-17e9-4b76-a3a6-de10fc19af66">
+
 
 
 
