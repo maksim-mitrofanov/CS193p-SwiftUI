@@ -22,17 +22,17 @@ struct Cardify: ViewModifier {
             let cardShape = createCardShape(for: geometry)
             
             ZStack {
+                
                 if isFaceUp {
                     cardShape.foregroundColor(.white)
                     cardShape.strokeBorder(lineWidth: borderWidth)
-                    content
-                        .transition(AnyTransition.scale.animation(.easeInOut(duration: 0.25)))
                 }
-
                 else {
                     cardShape
-                        .transition(AnyTransition.scale)
                 }
+                
+                content
+                    .opacity(isFaceUp ? 1 : 0)
             }
             .foregroundColor(fillColor)
         }
