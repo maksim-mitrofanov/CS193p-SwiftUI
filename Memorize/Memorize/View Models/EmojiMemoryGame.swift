@@ -25,18 +25,24 @@ class EmojiMemoryGame: ObservableObject {
         gameModel.shuffle()
     }
     
+    func turnAllCardsFaceUp() {
+        gameModel.turnAllCardsFaceUp()
+    }
+    
+    func turnAllCardsFaceDown() {
+        gameModel.turnAllCardsFaceDown()
+    }
+    
     func cardIndex(for card: EmojiMemoryGame.Card) -> Int {
         if let index = cards.firstIndex(where: { $0.id == card.id }) { return index }
         else { return 0 }
     }
     
-    func restart() {
-        gameModel = EmojiMemoryGame.getGame(with: Int(14 / 2))
-        gameModel.resetGame()
-    }
-    
-    func deal() {
-        gameModel.startGame()
+    func cardIsLast(card: EmojiMemoryGame.Card) -> Bool {
+        if let lastCard = cards.last {
+            return lastCard.id == card.id
+        }
+        return false
     }
     
     init(cardCount: Int = 6) {

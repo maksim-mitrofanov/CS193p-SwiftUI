@@ -60,6 +60,16 @@ struct MemoryGameView: View {
                             emojiGame.choose(card: card)
                         }
                     }
+                    .onAppear {
+                        if emojiGame.cardIsLast(card: card) {
+                            withAnimation(.easeInOut(duration: 0.5).delay(0.5)) {
+                                emojiGame.turnAllCardsFaceDown()
+                            }
+                            withAnimation(.easeInOut(duration: 0.5).delay(1)) {
+                                emojiGame.shuffle()
+                            }
+                        }
+                    }
             }
         }
     }
@@ -79,11 +89,6 @@ struct MemoryGameView: View {
             }
         }
         .onTapGesture {
-            // "deal" the cards
-            withAnimation {
-                emojiGame.deal()
-            }
-            
             isDealingCards = true
         }
         .onReceive(timer) { _ in
@@ -111,14 +116,18 @@ struct MemoryGameView: View {
         Button {
             isDealingCards = false
             
+            withAnimation(.easeInOut(duration: 0.5).delay(0.5)) {
+                emojiGame.turnAllCardsFaceUp()
+            }
             
-            withAnimation {
+            withAnimation(.easeInOut(duration: 0.5).delay(1)) {
                 dealtCardIDs.removeAll()
             }
             
-            withAnimation {
-                emojiGame.restart()
+            withAnimation(.easeInOut(duration: 0.5).delay(1.5)) {
+                emojiGame.shuffle()
             }
+            
                         
         } label: {
             Text("Restart")
@@ -147,16 +156,16 @@ extension MemoryGameView {
     
     private func cardRotationAngle(cardIndex: Int) -> Angle {
         switch cardIndex % 3 {
-        case 1: return Angle(degrees: -10)
-        case 2: return Angle(degrees: 10)
+        case 1: return Angle(degrees: -20)
+        case 2: return Angle(degrees: 20)
         default: return Angle(degrees: 0)
         }
     }
     
     private func cardOffset(cardIndex: Int) -> (x: CGFloat, y: CGFloat) {
         switch cardIndex % 3 {
-        case 1: return (-20, 5)
-        case 2: return (20, 5)
+        case 1: return (-40, 8)
+        case 2: return (40, 8)
         default: return (0, 0)
         }
     }

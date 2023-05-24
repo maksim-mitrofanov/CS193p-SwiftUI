@@ -22,11 +22,11 @@ struct MemoryGame<CardContent: Equatable> {
         }
     }
     
-    mutating func startGame() {
+    mutating func turnAllCardsFaceDown() {
         cards.indices.forEach { cards[$0].isFaceUp = false }
     }
     
-    mutating func resetGame() {
+    mutating func turnAllCardsFaceUp() {
         cards.indices.forEach { cards[$0].isFaceUp = true }
     }
     
