@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct MemoryGameView: View {
-    @State var dealt = Set<Int>()
     @ObservedObject var emojiGame: EmojiMemoryGame
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+
+    @State private var dealtCardIDs = Set<Int>() {
+        didSet {
+            print("~~~~~~~~~~~~~~")
+            print(dealtCardIDs.count)
+        }
+    }
+    
+    @State private var isDealingCards: Bool = false
+    
+    @Namespace private var dealingNameSpace
     
     var body: some View {
         VStack {
             title
-            cards
-            shuffleButton
+            gameBody
+            deckBody
+                .padding(.bottom)
+            
+            HStack {
+                shuffleButton
+                packButton
+            }
         }
         .padding(.horizontal)
     }
@@ -26,13 +43,15 @@ struct MemoryGameView: View {
             .padding(.top)
     }
     
-    var cards: some View {
-        AspectVGrid(items: emojiGame.cards, aspectRatio: 5/6.5) { card in
+    var gameBody: some View {
+        AspectVGrid(items: emojiGame.cards, aspectRatio: cardAspectRatio) { card in
             if isUndealt(card: card) || card.isMatched && !card.isFaceUp {
                 Color.clear
             }
             else {
                 CardView(card: card,fillColor: .orange)
+                    .matchedGeometryEffect(id: card.id, in: dealingNameSpace)
+                    .transition(.asymmetric(insertion: .identity, removal: .scale))
                     .transition(.scale)
                     .onTapGesture {
                         withAnimation  {
@@ -41,12 +60,34 @@ struct MemoryGameView: View {
                     }
             }
         }
-        .onAppear {
-            // "deal" the cards
-            withAnimation {
-                emojiGame.cards.forEach { deal(card: $0) }
+    }
+    
+    var deckBody: some View {
+        ZStack {
+            ForEach(emojiGame.cards.filter(isUndealt)) { card in
+                let cardIndex = emojiGame.cardIndex(for: card)
+                let cardOffset = cardOffset(cardIndex: cardIndex)
+                
+                CardView(card: card)
+                    .matchedGeometryEffect(id: card.id, in: dealingNameSpace)
+                    .transition(.asymmetric(insertion: .opacity, removal: .identity))
+                    .zIndex(-Double(cardIndex))
+                    .rotationEffect(cardRotationAngle(cardIndex: cardIndex))
+                    .offset(x: cardOffset.x, y: cardOffset.y)
             }
         }
+        .onTapGesture {
+            // "deal" the cards
+            isDealingCards = true
+        }
+        .onReceive(timer) { _ in
+            if isDealingCards, let firstCard = emojiGame.cards.filter(isUndealt).first {
+                withAnimation(Animation.easeInOut(duration: dealDuration)) {
+                    deal(card: firstCard)
+                }
+            }
+        }
+        .frame(width: undealtCardWidth, height: undealtCardHeight)
     }
     
     var shuffleButton: some View {
@@ -56,23 +97,55 @@ struct MemoryGameView: View {
             }
         } label:  {
             Text("Shuffle")
-                .font(.title2)
+                .font(.title3)
         }
-        .buttonStyle(.bordered)
+    }
+    
+    var packButton: some View {
+        Button {
+            isDealingCards = false
+            withAnimation {
+                dealtCardIDs.removeAll()
+            }
+        } label: {
+            Text("Pack")
+                .font(.title3)
+        }
     }
 }
 
 extension MemoryGameView {
     // Computed Variables
     private var columns: [GridItem] { [GridItem(.adaptive(minimum: 80))] }
+    private var cardAspectRatio: CGFloat { 5/6.5 }
+    private var undealtCardHeight: CGFloat { 90 }
+    private var undealtCardWidth: CGFloat { undealtCardHeight * cardAspectRatio }
+    private var dealDuration: Double { 0.5 }
+    private var totalDealDuration: Double { 2 }
     
     // Functions
     private func deal(card: EmojiMemoryGame.Card) {
-        dealt.insert(card.id)
+        dealtCardIDs.insert(card.id)
     }
     
     private func isUndealt(card: EmojiMemoryGame.Card) -> Bool {
-        !dealt.contains(card.id)
+        !dealtCardIDs.contains(card.id)
+    }
+    
+    private func cardRotationAngle(cardIndex: Int) -> Angle {
+        switch cardIndex % 3 {
+        case 1: return Angle(degrees: -10)
+        case 2: return Angle(degrees: 10)
+        default: return Angle(degrees: 0)
+        }
+    }
+    
+    private func cardOffset(cardIndex: Int) -> (x: CGFloat, y: CGFloat) {
+        switch cardIndex % 3 {
+        case 1: return (-20, 5)
+        case 2: return (20, 5)
+        default: return (0, 0)
+        }
     }
 }
 

@@ -25,6 +25,11 @@ class EmojiMemoryGame: ObservableObject {
         gameModel.shuffle()
     }
     
+    func cardIndex(for card: EmojiMemoryGame.Card) -> Int {
+        if let index = cards.firstIndex(where: { $0.id == card.id }) { return index }
+        else { return 0 }
+    }
+    
     init(cardCount: Int = 6) {
         gameModel = EmojiMemoryGame.getGame(with: Int(cardCount / 2))
     }
