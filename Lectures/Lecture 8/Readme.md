@@ -13,6 +13,9 @@ Add more animation to the game
 
 ## Demo
 
+https://github.com/maksim-mitrofanov/CS193p-SwiftUI/assets/87092187/a4d1bc15-23fa-4fb0-a30b-a64d5157442f
+
+
 
 
 
