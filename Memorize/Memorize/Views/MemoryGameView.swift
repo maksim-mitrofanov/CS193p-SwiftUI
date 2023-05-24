@@ -28,13 +28,18 @@ struct MemoryGameView: View {
     
     var cards: some View {
         AspectVGrid(items: emojiGame.cards, aspectRatio: 5/6.5) { card in
-            CardView(card: card,fillColor: .orange)
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: 3)) {
-                        emojiGame.choose(card: card)
+            if card.isMatched && !card.isFaceUp {
+                Color.clear
+            }
+            else {
+                CardView(card: card,fillColor: .orange)
+                    .transition(.scale)
+                    .onTapGesture {
+                        withAnimation  {
+                            emojiGame.choose(card: card)
+                        }
                     }
-                }
-                .opacity(card.isMatched ? 0.3 : 1)
+            }
         }
     }
     

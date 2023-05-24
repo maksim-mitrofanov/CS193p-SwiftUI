@@ -39,8 +39,6 @@ struct MemoryGame<CardContent: Equatable> {
         } else {
             indexOfTheOnlyFaceUpCard = chosenCardIndex
         }
-        
-        turnMatchedCardsFaceUp()
     }
     
     private mutating func turnMatchedCardsFaceUp() {
