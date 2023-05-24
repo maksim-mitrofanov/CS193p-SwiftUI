@@ -31,8 +31,10 @@ struct MemoryGameView: View {
             
             HStack {
                 shuffleButton
-                packButton
+                Spacer()
+                restart
             }
+            .padding(.horizontal)
         }
         .padding(.horizontal)
     }
@@ -78,6 +80,10 @@ struct MemoryGameView: View {
         }
         .onTapGesture {
             // "deal" the cards
+            withAnimation {
+                emojiGame.deal()
+            }
+            
             isDealingCards = true
         }
         .onReceive(timer) { _ in
@@ -101,14 +107,21 @@ struct MemoryGameView: View {
         }
     }
     
-    var packButton: some View {
+    var restart: some View {
         Button {
             isDealingCards = false
+            
+            
             withAnimation {
                 dealtCardIDs.removeAll()
             }
+            
+            withAnimation {
+                emojiGame.restart()
+            }
+                        
         } label: {
-            Text("Pack")
+            Text("Restart")
                 .font(.title3)
         }
     }

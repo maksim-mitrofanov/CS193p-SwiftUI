@@ -31,6 +31,8 @@ struct Cardify: Animatable, ViewModifier {
                 }
                 else {
                     cardShape
+                    cardShape.strokeBorder(lineWidth: borderWidth)
+                        .foregroundColor(.black.opacity(0.5))
                 }
                 
                 content
