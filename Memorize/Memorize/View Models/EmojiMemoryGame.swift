@@ -21,6 +21,10 @@ class EmojiMemoryGame: ObservableObject {
         gameModel.choose(card)
     }
     
+    func shuffle() {
+        gameModel.shuffle()
+    }
+    
     init(cardCount: Int = 6) {
         gameModel = EmojiMemoryGame.getGame(with: Int(cardCount / 2))
     }

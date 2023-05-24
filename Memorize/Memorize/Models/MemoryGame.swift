@@ -22,6 +22,10 @@ struct MemoryGame<CardContent: Equatable> {
         }
     }
     
+    mutating func shuffle() {
+        cards.shuffle()
+    }
+    
     mutating func choose(_ card: Card) {
         guard let chosenCardIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
         guard !cards[chosenCardIndex].isFaceUp, !cards[chosenCardIndex].isMatched else { return }

@@ -15,9 +15,9 @@ struct MemoryGameView: View {
         VStack {
             title
             cards
+            shuffleButton
         }
-        .padding()
-        
+        .padding(.horizontal)
     }
     
     var title: some View {
@@ -30,12 +30,24 @@ struct MemoryGameView: View {
         AspectVGrid(items: emojiGame.cards, aspectRatio: 5/6.5) { card in
             CardView(card: card,fillColor: .orange)
                 .onTapGesture {
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 3)) {
                         emojiGame.choose(card: card)
                     }
                 }
                 .opacity(card.isMatched ? 0.3 : 1)
         }
+    }
+    
+    var shuffleButton: some View {
+        Button {
+            withAnimation {
+                emojiGame.shuffle()
+            }
+        } label:  {
+            Text("Shuffle")
+                .font(.title2)
+        }
+        .buttonStyle(.bordered)
     }
 }
 
