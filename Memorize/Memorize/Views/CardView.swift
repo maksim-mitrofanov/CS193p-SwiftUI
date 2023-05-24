@@ -24,9 +24,9 @@ struct CardView: View {
                                     animatedBonusRemaining = 0
                                 }
                             }
-                            .animation(.linear(duration: card.bonusTimeRemaining))
+                            .animation(.linear(duration: 25))
                     } else {
-                        PieShape(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-card.bonusRemaining)*360-90))
+                        PieShape(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-animatedBonusRemaining)*360-90))
                     }
                 }
                 .padding(5)

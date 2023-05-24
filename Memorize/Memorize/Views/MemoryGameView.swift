@@ -141,8 +141,9 @@ struct MemoryGameView: View {
             
             withAnimation(.easeInOut(duration: 0.4).delay(2.5)) {
                 emojiGame.shuffle()
+                emojiGame.turnAllCardsFaceDown()
             }
-            
+        
                         
         } label: {
             Text("Restart")
