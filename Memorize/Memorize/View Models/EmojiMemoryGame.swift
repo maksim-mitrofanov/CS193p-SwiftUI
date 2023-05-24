@@ -45,6 +45,10 @@ class EmojiMemoryGame: ObservableObject {
         return false
     }
     
+    func restart() {
+        gameModel = EmojiMemoryGame.getGame(with: Int(14 / 2))
+    }
+    
     init(cardCount: Int = 6) {
         gameModel = EmojiMemoryGame.getGame(with: Int(cardCount / 2))
     }

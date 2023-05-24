@@ -30,9 +30,10 @@ struct Cardify: Animatable, ViewModifier {
                     cardShape.strokeBorder(lineWidth: borderWidth)
                 }
                 else {
-                    cardShape
+                    cardShape.fill(
+                        AngularGradient(colors: [.orange, .yellow], center: .topLeading)
+                    )
                     cardShape.strokeBorder(lineWidth: borderWidth)
-                        .foregroundColor(.black.opacity(0.5))
                 }
                 
                 content

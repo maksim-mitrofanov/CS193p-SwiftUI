@@ -25,9 +25,14 @@ struct MemoryGameView: View {
     var body: some View {
         VStack {
             title
-            gameBody
-            deckBody
-                .padding(.bottom)
+            ZStack(alignment: .bottom) {
+                gameBody
+                deckBody
+                    .padding(.horizontal, 100)
+                    .padding(.vertical, 25)
+            }
+            
+            .padding(.bottom)
             
             HStack {
                 shuffleButton
@@ -51,7 +56,7 @@ struct MemoryGameView: View {
                 Color.clear
             }
             else {
-                CardView(card: card,fillColor: .orange)
+                CardView(card: card)
                     .matchedGeometryEffect(id: card.id, in: dealingNameSpace)
                     .transition(.asymmetric(insertion: .identity, removal: .scale))
                     .transition(.scale)
@@ -89,6 +94,8 @@ struct MemoryGameView: View {
             }
         }
         .onTapGesture {
+            emojiGame.turnAllCardsFaceDown()
+            emojiGame.restart()
             isDealingCards = true
         }
         .onReceive(timer) { _ in
@@ -124,7 +131,15 @@ struct MemoryGameView: View {
                 dealtCardIDs.removeAll()
             }
             
-            withAnimation(.easeInOut(duration: 0.5).delay(1.5)) {
+            withAnimation(.easeInOut(duration: 0.4).delay(1.5)) {
+                emojiGame.shuffle()
+            }
+            
+            withAnimation(.easeInOut(duration: 0.4).delay(2)) {
+                emojiGame.shuffle()
+            }
+            
+            withAnimation(.easeInOut(duration: 0.4).delay(2.5)) {
                 emojiGame.shuffle()
             }
             

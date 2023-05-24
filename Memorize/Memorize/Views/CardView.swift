@@ -8,37 +8,47 @@
 import SwiftUI
 
 struct CardView: View {
+    let card: EmojiMemoryGame.Card
     
-    
-    //Params
-    var card: EmojiMemoryGame.Card
-    var fillColor: Color = .orange
-    var fontOffset: CGFloat = 1.6
-    
-    //Constants
-    private let backgroundCircleScale: CGFloat = 0.85
+    @State private var animatedBonusRemaining: Double = 0
     
     var body: some View {
-        cardContents
-            .cardify(isFaceUp: card.isFaceUp)
-    }
-    
-    var cardContents: some View {
-        GeometryReader { proxy in
+        GeometryReader { geometry in
             ZStack {
-                PieShape(
-                    startAngle: Angle(degrees: 0 - 90),
-                    endAngle: Angle(degrees: 50 - 90))
-                .scale(backgroundCircleScale)
-                .opacity(0.55)
+                Group {
+                    if card.isConsumingBonusTime {
+                        PieShape(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-animatedBonusRemaining)*360 - 90))
+                            .onAppear {
+                                animatedBonusRemaining = card.bonusRemaining
+                                withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+                                    animatedBonusRemaining = 0
+                                }
+                            }
+                            .animation(.linear(duration: card.bonusTimeRemaining))
+                    } else {
+                        PieShape(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-card.bonusRemaining)*360-90))
+                    }
+                }
+                .padding(5)
+                .opacity(0.5)
+                
                 Text(card.content)
-                    .rotationEffect(Angle(degrees: card.isMatched ? 360 : 0))
-                    .font(font(for: proxy))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+                    .padding(5)
+                    .font(Font.system(size: DrawingConstants.fontSize))
+                    .scaleEffect(scale(thatFits: geometry.size))
             }
+            .cardify(isFaceUp: card.isFaceUp)
         }
     }
     
-    private func font(for geometry: GeometryProxy) -> Font {
-        return Font.system(size: geometry.size.width / fontOffset)
+    private func scale(thatFits size: CGSize) -> CGFloat {
+        min(size.width, size.height) / (DrawingConstants.fontSize / DrawingConstants.fontScale)
+    }
+        
+    private struct DrawingConstants {
+        static let fontScale: CGFloat = 0.7
+        static let fontSize: CGFloat = 32
     }
 }

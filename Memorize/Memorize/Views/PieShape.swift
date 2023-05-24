@@ -9,13 +9,20 @@ import SwiftUI
 
 struct PieShape: Shape {
     
-    //Params
     var startAngle: Angle
     var endAngle: Angle
+    var clockwise: Bool = false
     
-    //Remember that clockwise is actually upside down due to coord system
-    var clockwise: Bool = true
-    
+    var animatableData: AnimatablePair<Double, Double> {
+        get {
+            AnimatablePair(startAngle.radians, endAngle.radians)
+        }
+        set {
+            startAngle = Angle.radians(newValue.first)
+            endAngle = Angle.radians(newValue.second)
+        }
+    }
+        
     func path(in rect: CGRect) -> Path {
         let centerPoint = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
